@@ -13,7 +13,7 @@ public class Uzu {
 	private long uzuID;
 	private String subjectTitle;
 	private String messageBody;
-	private
+	//private
 	
 	public Uzu() {}
 	
