@@ -3,7 +3,10 @@
  */
 package uzu.classes;
 
+import java.io.Serializable;
+
 import javax.inject.Named;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -15,19 +18,42 @@ import javax.persistence.Table;
 
 @Entity
 @Named
-@Table(name="Suppliers")
-public class Uzu {
+@Table(name="items")
+public class Uzu implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 
+	@Column(name="itemID")
 	private long uzuID;
+	
+	@Column(name="longitude")
 	private float longitude;
+	
+	@Column(name="latitude")
 	private float latitude;
+	
+	@Column(name="subject")
 	private String subjectTitle;
+	
+	@Column(name="message")
 	private String messageBody;
-	private boolean hasImage;
+	
+	@Column(name="hasImages")
+	private boolean hasImages;
+	
+	@Column(name="birth")
 	private long birth;
-	private int life; 
+	
+	@Column(name="life")
+	private int life;
+	
+	@Column(name="death")
 	private long death;
+	
+	@Column(name="categoryID")
 	private int categoryID;
+	
+	@Column(name="zombie")
 	private boolean zombie;
 	
 	public Uzu(int id) {
@@ -109,14 +135,14 @@ public class Uzu {
 	 * @return the hasImage
 	 */
 	public boolean isHasImage() {
-		return hasImage;
+		return hasImages;
 	}
 
 	/**
 	 * @param hasImage the hasImage to set
 	 */
 	public void setHasImage(boolean hasImage) {
-		this.hasImage = hasImage;
+		this.hasImages = hasImage;
 	}
 
 	/**
