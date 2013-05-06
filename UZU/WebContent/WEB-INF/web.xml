@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
-  <display-name>UZU</display-name>
+  <display-name>UZU_Service</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
@@ -17,10 +17,13 @@
     <servlet-name>Resteasy</servlet-name>
     <url-pattern>/*</url-pattern>
   </servlet-mapping>
+  
+  <!-- This is the service that needs to be registered to make RESTful work. -->
   <context-param>
     <param-name>javax.ws.rs.Application</param-name>
-    <param-value>org.jboss.samples.rs.webservices.MyRESTApplication</param-value>
+    <param-value>uzu.webservices.UzuRESTApplication</param-value>
   </context-param>
+  
   <listener>
     <listener-class>org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap</listener-class>
   </listener>
