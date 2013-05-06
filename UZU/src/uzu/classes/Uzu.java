@@ -3,11 +3,19 @@
  */
 package uzu.classes;
 
+import javax.inject.Named;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 
 /**
  * @author Marwan
  *
  */
+
+@Entity
+@Named
+@Table(name="Suppliers")
 public class Uzu {
 
 	private long uzuID;
@@ -19,6 +27,8 @@ public class Uzu {
 	private long birth;
 	private int life; 
 	private long death;
+	private int categoryID;
+	private boolean zombie;
 	
 	public Uzu(int id) {
 		uzuID = id;
@@ -149,6 +159,34 @@ public class Uzu {
 	 */
 	public void setDeath(long death) {
 		this.death = death;
+	}
+
+	/**
+	 * @return the categoryID
+	 */
+	public int getCategoryID() {
+		return categoryID;
+	}
+
+	/**
+	 * @param categoryID the categoryID to set
+	 */
+	public void setCategoryID(int categoryID) {
+		this.categoryID = categoryID;
+	}
+
+	/**
+	 * @return the zombie
+	 */
+	public boolean isZombie() {
+		return zombie;
+	}
+
+	/**
+	 * @param zombie the zombie to set
+	 */
+	public void setZombie(boolean zombie) {
+		this.zombie = zombie;
 	}
 	
 }
