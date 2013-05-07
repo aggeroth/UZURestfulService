@@ -5,7 +5,7 @@ package uzu.webservices;
 
 import javax.ws.rs.core.Response;
 
-import uzu.classes.Uzu;
+import uzu.models.Uzu;
 
 public class UzuResourceService implements UzuResource {
 

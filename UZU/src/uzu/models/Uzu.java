@@ -1,11 +1,9 @@
 /**
  * 
  */
-package uzu.classes;
+package uzu.models;
 
 import java.io.Serializable;
-
-import javax.inject.Named;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -17,7 +15,6 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Named
 @Table(name="items")
 public class Uzu implements Serializable {
 	
