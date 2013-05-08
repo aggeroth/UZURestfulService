@@ -3,7 +3,6 @@
  */
 package uzu.webservices;
 
-import javax.ejb.Remote;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -19,7 +18,6 @@ import uzu.models.Uzu;
  *
  */
 
-@Remote
 @Path("/Ocean")
 public interface UzuResource {
 	
@@ -31,7 +29,7 @@ public interface UzuResource {
 	@GET
 	@Path("/Trawl/{latitude}/{longitude}")
 	@Produces("application/json")
-	public Uzu[] getUzus(@PathParam("latitude") long latitude, @PathParam("longitude") long longitude);
+	public Uzu[] getUzus(@PathParam("latitude") float latitude, @PathParam("longitude") float longitude);
 	
 	
 }
