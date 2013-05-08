@@ -4,12 +4,10 @@
 package uzu.models;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -30,10 +28,10 @@ public class Uzu implements Serializable {
 	private int uzuID;
 	
 	@Column(name="longitude")
-	private BigDecimal longitude;
+	private float longitude;
 	
 	@Column(name="latitude")
-	private BigDecimal latitude;
+	private float latitude;
 	
 	@Column(name="subject")
 	private String subjectTitle;
@@ -81,28 +79,28 @@ public class Uzu implements Serializable {
 	/**
 	 * @return the longitude
 	 */
-	public BigDecimal getLongitude() {
+	public float getLongitude() {
 		return longitude;
 	}
 
 	/**
 	 * @param longitude the longitude to set
 	 */
-	public void setLongitude(BigDecimal longitude) {
+	public void setLongitude(float longitude) {
 		this.longitude = longitude;
 	}
 
 	/**
 	 * @return the latitude
 	 */
-	public BigDecimal getLatitude() {
+	public float getLatitude() {
 		return latitude;
 	}
 
 	/**
 	 * @param latitude the latitude to set
 	 */
-	public void setLatitude(BigDecimal latitude) {
+	public void setLatitude(float latitude) {
 		this.latitude = latitude;
 	}
 

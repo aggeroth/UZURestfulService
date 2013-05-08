@@ -10,12 +10,11 @@ import javax.persistence.TypedQuery;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
-import javax.ws.rs.core.Application;
 import javax.ws.rs.core.Response;
 import uzu.models.Uzu;
 
 @Stateless
-public class UzuResourceService extends Application implements UzuResource {
+public class UzuResourceService implements UzuResource {
 
 	@PersistenceContext(unitName = "uzu_db")
 	EntityManager entityManager;
