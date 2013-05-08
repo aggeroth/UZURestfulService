@@ -4,8 +4,12 @@
 package uzu.models;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 
@@ -20,6 +24,8 @@ public class Uzu implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
+	@Id
+	@GeneratedValue
 	@Column(name="itemID")
 	private long uzuID;
 	
@@ -39,13 +45,13 @@ public class Uzu implements Serializable {
 	private boolean hasImages;
 	
 	@Column(name="birth")
-	private long birth;
+	private Timestamp birth;
 	
 	@Column(name="life")
 	private int life;
 	
 	@Column(name="death")
-	private long death;
+	private Timestamp death;
 	
 	@Column(name="categoryID")
 	private int categoryID;
@@ -145,14 +151,14 @@ public class Uzu implements Serializable {
 	/**
 	 * @return the birth
 	 */
-	public long getBirth() {
+	public Timestamp getBirth() {
 		return birth;
 	}
 
 	/**
 	 * @param birth the birth to set
 	 */
-	public void setBirth(long birth) {
+	public void setBirth(Timestamp birth) {
 		this.birth = birth;
 	}
 
@@ -173,14 +179,14 @@ public class Uzu implements Serializable {
 	/**
 	 * @return the death
 	 */
-	public long getDeath() {
+	public Timestamp getDeath() {
 		return death;
 	}
 
 	/**
 	 * @param death the death to set
 	 */
-	public void setDeath(long death) {
+	public void setDeath(Timestamp death) {
 		this.death = death;
 	}
 
