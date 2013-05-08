@@ -3,16 +3,16 @@
  */
 package uzu.webservices;
 
-import javax.persistence.PersistenceContext;
+import javax.inject.Inject;
+import javax.ws.rs.core.Application;
 import javax.ws.rs.core.Response;
-
 import uzu.models.Uzu;
 import uzu.name_me_something_useful.UzuManager;
 
-public class UzuResourceService implements UzuResource {
+public class UzuResourceService extends Application implements UzuResource {
 
-	@PersistenceContext
-    private UzuManager entityManager;
+	@Inject
+	UzuManager entityManager;
 	
 	public Response createUzu(Uzu uzu) {
 		String result = "Product created : " + uzu;

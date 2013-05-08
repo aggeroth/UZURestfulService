@@ -4,6 +4,7 @@
 package uzu.models;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.sql.Timestamp;
 
 import javax.persistence.Column;
@@ -25,15 +26,14 @@ public class Uzu implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue
 	@Column(name="itemID")
-	private long uzuID;
+	private int uzuID;
 	
 	@Column(name="longitude")
-	private float longitude;
+	private BigDecimal longitude;
 	
 	@Column(name="latitude")
-	private float latitude;
+	private BigDecimal latitude;
 	
 	@Column(name="subject")
 	private String subjectTitle;
@@ -41,7 +41,7 @@ public class Uzu implements Serializable {
 	@Column(name="message")
 	private String messageBody;
 	
-	@Column(name="hasImages")
+	@Column(name="hasImages", columnDefinition = "BIT", length = 1)
 	private boolean hasImages;
 	
 	@Column(name="birth")
@@ -56,7 +56,7 @@ public class Uzu implements Serializable {
 	@Column(name="categoryID")
 	private int categoryID;
 	
-	@Column(name="zombie")
+	@Column(name="zombie", columnDefinition = "BIT", length = 1)
 	private boolean zombie;
 	
 	public Uzu(int id) {
@@ -67,42 +67,42 @@ public class Uzu implements Serializable {
 	/**
 	 * @return the uzuID
 	 */
-	public long getUzuID() {
+	public int getUzuID() {
 		return uzuID;
 	}
 
 	/**
 	 * @param uzuID the uzuID to set
 	 */
-	public void setUzuID(long uzuID) {
+	public void setUzuID(int uzuID) {
 		this.uzuID = uzuID;
 	}
 
 	/**
 	 * @return the longitude
 	 */
-	public float getLongitude() {
+	public BigDecimal getLongitude() {
 		return longitude;
 	}
 
 	/**
 	 * @param longitude the longitude to set
 	 */
-	public void setLongitude(float longitude) {
+	public void setLongitude(BigDecimal longitude) {
 		this.longitude = longitude;
 	}
 
 	/**
 	 * @return the latitude
 	 */
-	public float getLatitude() {
+	public BigDecimal getLatitude() {
 		return latitude;
 	}
 
 	/**
 	 * @param latitude the latitude to set
 	 */
-	public void setLatitude(float latitude) {
+	public void setLatitude(BigDecimal latitude) {
 		this.latitude = latitude;
 	}
 
