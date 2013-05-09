@@ -34,7 +34,20 @@ public class UzuManager implements Serializable {
 		query.setParameter("longitudeLower", longitude - range);
 		query.setParameter("latitudeUpper", latitude + range);
 		query.setParameter("latitudeLower", latitude - range);
-		return (Uzu[]) query.getResultList().toArray();
+		
+		if (query.getResultList().size() > 0)
+		{
+			java.util.List<Uzu> items = query.getResultList();
+            Uzu[] iarray = new Uzu[items.size()];
+
+            for (int i = 0; i < iarray.length; i++) {
+                    iarray[i] = items.get(i);
+            }
+
+            return iarray;
+			//return (Uzu[]) query.getResultList().toArray();
+		}
+		return new Uzu[] {null, null, null};
 	}
 
 }

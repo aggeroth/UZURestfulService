@@ -28,22 +28,7 @@ public class UzuResourceService implements UzuResource {
 	}
 
 	public Uzu[] getUzus(float latitude, float longitude) {
-		TypedQuery<Uzu> query = entityManager.createQuery("SELECT u FROM Uzu u " +
-				"WHERE u.longitude <= :longitudeUpper " +
-				"AND u.longitude >= :longitudeLower " +
-				"AND u.latitude <= :latitudeUpper " +
-				"AND u.latitude >= :latitudeLower ", Uzu.class);
-		query.setParameter("longitudeUpper", longitude + range);
-		query.setParameter("longitudeLower", longitude - range);
-		query.setParameter("latitudeUpper", latitude + range);
-		query.setParameter("latitudeLower", latitude - range);
-		//return (Uzu[]) query.getResultList().toArray();
-		if (query.getResultList().size() > 0)
-		{
-			return (Uzu[]) query.getResultList().toArray();
-		}
-		Uzu[] uzuArray = new Uzu[] {null, null, null};
-		return uzuArray;
+		return null;
 	}
 
 	@GET
